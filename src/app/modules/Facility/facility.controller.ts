@@ -8,11 +8,22 @@ const createFacility = catchAsync(async (req, res) => {
   sendResponse(res, {
     success: true,
     statusCode: httpStatus.OK,
-    message: 'Item Category Created Successfully',
+    message: 'Facility Created Successfully',
+    data: itemFacility,
+  });
+});
+const getAllFacility = catchAsync(async (req, res) => {
+  const itemFacility = await FacilityService.getAllFacility();
+
+  sendResponse(res, {
+    success: true,
+    statusCode: httpStatus.OK,
+    message: 'Item Category Retrieved Successfully',
     data: itemFacility,
   });
 });
 
 export const FacilityControllers = {
   createFacility,
+  getAllFacility,
 };

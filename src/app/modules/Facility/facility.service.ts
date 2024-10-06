@@ -6,6 +6,12 @@ const createFacility = async (facility: TFacility) => {
   return result;
 };
 
+const getAllFacility = async () => {
+  const result = await Facility.find();
+  return result;
+};
+
 export const FacilityService = {
   createFacility,
+  getAllFacility,
 };
