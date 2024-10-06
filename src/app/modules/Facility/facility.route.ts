@@ -7,5 +7,5 @@ export const UserRoutes = router;
 router.post(
   '/facility',
   //   validateRequest(UserValidation.createUserValidationSchema),
-  //   UserControllers.userRegister,
+    FacilitiyControllers.createFacility,
 );
