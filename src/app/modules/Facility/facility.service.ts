@@ -11,7 +11,13 @@ const getAllFacility = async () => {
   return result;
 };
 
+const getFacilityById = async (id: string) => {
+  const result = await Facility.findById(id);
+  return result;
+};
+
 export const FacilityService = {
   createFacility,
   getAllFacility,
+  getFacilityById,
 };

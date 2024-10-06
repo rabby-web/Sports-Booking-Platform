@@ -22,8 +22,21 @@ const getAllFacility = catchAsync(async (req, res) => {
     data: itemFacility,
   });
 });
+const getFacilityById = catchAsync(async (req, res) => {
+  const { facilityId } = req.params;
+
+  const result = await FacilityService.getFacilityById(facilityId);
+
+  sendResponse(res, {
+    success: true,
+    statusCode: httpStatus.OK,
+    message: 'Item Category Retrieved Successfully',
+    data: result,
+  });
+});
 
 export const FacilityControllers = {
   createFacility,
   getAllFacility,
+  getFacilityById,
 };
