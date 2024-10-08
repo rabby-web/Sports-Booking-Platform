@@ -12,9 +12,9 @@ const createFacility = catchAsync(async (req, res) => {
     data: itemFacility,
   });
 });
+
 const getAllFacility = catchAsync(async (req, res) => {
   const itemFacility = await FacilityService.getAllFacility();
-
   sendResponse(res, {
     success: true,
     statusCode: httpStatus.OK,
@@ -22,11 +22,10 @@ const getAllFacility = catchAsync(async (req, res) => {
     data: itemFacility,
   });
 });
+
 const getFacilityById = catchAsync(async (req, res) => {
   const { facilityId } = req.params;
-
   const result = await FacilityService.getFacilityById(facilityId);
-
   sendResponse(res, {
     success: true,
     statusCode: httpStatus.OK,
